@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -64,6 +64,24 @@ const Contact = () => {
     },
   ];
 
+  const socialLinks = [
+    {
+      name: 'GitHub',
+      icon: <Github size={20} />,
+      url: 'https://github.com/yourusername',
+    },
+    {
+      name: 'LinkedIn',
+      icon: <Linkedin size={20} />,
+      url: 'https://linkedin.com/in/yourusername',
+    },
+    {
+      name: 'Twitter',
+      icon: <Twitter size={20} />,
+      url: 'https://twitter.com/yourusername',
+    },
+  ];
+
   return (
     <section id="contact" className="py-20 bg-secondary/30">
       <div className="section-container">
@@ -99,19 +117,16 @@ const Contact = () => {
             <div className="pt-4">
               <h4 className="text-lg font-semibold mb-4">Connect with me:</h4>
               <div className="flex space-x-4">
-                {['github', 'linkedin', 'twitter'].map((platform) => (
+                {socialLinks.map((platform) => (
                   <a
-                    key={platform}
-                    href={`https://${platform}.com/yourusername`}
+                    key={platform.name}
+                    href={platform.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 bg-background rounded-lg text-gray-300 hover:text-portfolio-purple transition-colors"
+                    aria-label={`Visit my ${platform.name} profile`}
                   >
-                    <img 
-                      src={`https://cdn.simpleicons.org/${platform}/fff`} 
-                      alt={platform} 
-                      className="w-5 h-5"
-                    />
+                    {platform.icon}
                   </a>
                 ))}
               </div>
