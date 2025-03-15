@@ -30,8 +30,8 @@ const Contact = () => {
     
     // Use EmailJS to send the email
     emailjs.send(
-      'service_mwcj0nl', // Replace with your EmailJS service ID
-      'template_jdxs3e8', // Replace with your EmailJS template ID
+      'service_5z63u1u', // Replace with your EmailJS service ID
+      'template_diot51v', // Replace with your EmailJS template ID
       {
         from_name: formData.name,
         from_email: formData.email,
