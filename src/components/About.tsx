@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { Award, User, Calendar, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const About = () => {
   const personalInfo = [
-    { icon: <User size={20} />, label: 'Name', value: 'Jane Doe' },
+    { icon: <User size={20} />, label: 'Name', value: 'Rishabh Raj' },
     { icon: <Calendar size={20} />, label: 'Experience', value: '5+ Years' },
     { icon: <MapPin size={20} />, label: 'Location', value: 'San Francisco, CA' },
     { icon: <Award size={20} />, label: 'Degree', value: 'B.S. Computer Science' },
@@ -25,7 +24,6 @@ const About = () => {
         </motion.h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mt-16">
-          {/* Image */}
           <motion.div 
             className="relative"
             initial={{ opacity: 0, x: -30 }}
@@ -47,7 +45,6 @@ const About = () => {
             </motion.div>
           </motion.div>
           
-          {/* Content */}
           <motion.div 
             className="space-y-6"
             initial={{ opacity: 0, x: 30 }}
