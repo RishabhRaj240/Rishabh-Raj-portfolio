@@ -30,15 +30,15 @@ const Contact = () => {
     
     // Use EmailJS to send the email
     emailjs.send(
-      'service_id', // Replace with your EmailJS service ID
-      'template_id', // Replace with your EmailJS template ID
+      'service_mwcj0nl', // Replace with your EmailJS service ID
+      'template_jdxs3e8', // Replace with your EmailJS template ID
       {
         from_name: formData.name,
         from_email: formData.email,
         subject: formData.subject,
         message: formData.message,
       },
-      'user_id' // Replace with your EmailJS user ID
+      'SDzndcok2dccgxxFP' // Replace with your EmailJS user ID
     )
       .then(() => {
         toast({
