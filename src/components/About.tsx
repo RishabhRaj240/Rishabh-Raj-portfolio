@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Award, User, Calendar, MapPin } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const About = () => {
   const personalInfo = [
@@ -13,23 +14,47 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-portfolio-dark">
       <div className="section-container">
-        <h2 className="section-title">About Me</h2>
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          About Me
+        </motion.h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mt-16">
           {/* Image */}
-          <div className="relative animate-slide-up">
+          <motion.div 
+            className="relative"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
             <div className="absolute -inset-2 bg-portfolio-purple/20 rounded-lg blur-sm"></div>
-            <div className="relative overflow-hidden rounded-lg">
+            <motion.div 
+              className="relative overflow-hidden rounded-lg"
+              whileHover={{ scale: 1.03 }}
+              transition={{ duration: 0.3 }}
+            >
               <img 
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=2000" 
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=2000" 
                 alt="Jane Doe working" 
-                className="w-full h-auto object-cover rounded-lg transform hover:scale-105 transition-transform duration-500"
+                className="w-full h-auto object-cover rounded-lg"
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
           
           {/* Content */}
-          <div className="space-y-6 animate-slide-up" style={{ animationDelay: '200ms' }}>
+          <motion.div 
+            className="space-y-6"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             <h3 className="text-2xl font-bold">Crafting Digital Experiences with Code</h3>
             
             <p className="text-gray-300 leading-relaxed">
@@ -44,27 +69,46 @@ const About = () => {
               I'm also experienced with TypeScript, GraphQL, and various database technologies.
             </p>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+            <motion.div 
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
               {personalInfo.map((item, index) => (
-                <div key={index} className="flex items-center gap-3">
+                <motion.div 
+                  key={index} 
+                  className="flex items-center gap-3"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 0.1 * index }}
+                >
                   <div className="text-portfolio-purple">{item.icon}</div>
                   <div>
                     <span className="text-gray-400 text-sm">{item.label}: </span>
                     <span className="font-medium">{item.value}</span>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
             
-            <div className="pt-4">
+            <motion.div 
+              className="pt-4"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
               <a 
                 href="#contact" 
                 className="btn-primary"
               >
                 Contact Me
               </a>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
